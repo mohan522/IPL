@@ -1,0 +1,1531 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0326.1623                               -->
+<workbook original-version='18.1' source-build='2020.1.2 (20201.20.0326.1623)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Ball_By_Ball+' inline='true' name='federated.03765g3192wlwv1fp1bx819iun8d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Ball_By_Ball' name='textscan.1t3bl6019j0ool1atncpe1rkb3sc'>
+            <connection class='textscan' directory='C:/Users/kiran/OneDrive/Documents/GitHub/IPL' filename='Ball_By_Ball.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Match.csv].[Country_Name]' />
+              <expression op='[Player_match.csv].[Country_Name]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Match.csv].[Country_Name]' />
+                <expression op='[Player.csv].[Country_Name]' />
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Ball_By_Ball.csv].[MatcH_id]' />
+                  <expression op='[Match.csv].[match_id]' />
+                </expression>
+              </clause>
+              <relation connection='textscan.1t3bl6019j0ool1atncpe1rkb3sc' name='Ball_By_Ball.csv' table='[Ball_By_Ball#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='MatcH_id' ordinal='0' />
+                  <column datatype='integer' name='Over_id' ordinal='1' />
+                  <column datatype='integer' name='Ball_id' ordinal='2' />
+                  <column datatype='integer' name='Innings_No' ordinal='3' />
+                  <column datatype='integer' name='Team_Batting' ordinal='4' />
+                  <column datatype='integer' name='Team_Bowling' ordinal='5' />
+                  <column datatype='integer' name='Striker_Batting_Position' ordinal='6' />
+                  <column datatype='string' name='Extra_Type' ordinal='7' />
+                  <column datatype='integer' name='Runs_Scored' ordinal='8' />
+                  <column datatype='integer' name='Extra_runs' ordinal='9' />
+                  <column datatype='integer' name='Wides' ordinal='10' />
+                  <column datatype='integer' name='Legbyes' ordinal='11' />
+                  <column datatype='integer' name='Byes' ordinal='12' />
+                  <column datatype='integer' name='Noballs' ordinal='13' />
+                  <column datatype='integer' name='Penalty' ordinal='14' />
+                  <column datatype='integer' name='Bowler_Extras' ordinal='15' />
+                  <column datatype='string' name='Out_type' ordinal='16' />
+                  <column datatype='integer' name='Caught' ordinal='17' />
+                  <column datatype='integer' name='Bowled' ordinal='18' />
+                  <column datatype='integer' name='Run_out' ordinal='19' />
+                  <column datatype='integer' name='LBW' ordinal='20' />
+                  <column datatype='integer' name='Retired_hurt' ordinal='21' />
+                  <column datatype='integer' name='Stumped' ordinal='22' />
+                  <column datatype='integer' name='caught_and_bowled' ordinal='23' />
+                  <column datatype='integer' name='hit_wicket' ordinal='24' />
+                  <column datatype='integer' name='ObstructingFeild' ordinal='25' />
+                  <column datatype='integer' name='Bowler_Wicket' ordinal='26' />
+                  <column datatype='date' name='Match_Date' ordinal='27' />
+                  <column datatype='integer' name='Season' ordinal='28' />
+                  <column datatype='integer' name='Striker' ordinal='29' />
+                  <column datatype='integer' name='Non_Striker' ordinal='30' />
+                  <column datatype='integer' name='Bowler' ordinal='31' />
+                  <column datatype='integer' name='Player_Out' ordinal='32' />
+                  <column datatype='integer' name='Fielders' ordinal='33' />
+                  <column datatype='integer' name='Striker_match_SK' ordinal='34' />
+                  <column datatype='integer' name='StrikerSK' ordinal='35' />
+                  <column datatype='integer' name='NonStriker_match_SK' ordinal='36' />
+                  <column datatype='integer' name='NONStriker_SK' ordinal='37' />
+                  <column datatype='integer' name='Fielder_match_SK' ordinal='38' />
+                  <column datatype='integer' name='Fielder_SK' ordinal='39' />
+                  <column datatype='integer' name='Bowler_match_SK' ordinal='40' />
+                  <column datatype='integer' name='BOWLER_SK' ordinal='41' />
+                  <column datatype='integer' name='PlayerOut_match_SK' ordinal='42' />
+                  <column datatype='integer' name='BattingTeam_SK' ordinal='43' />
+                  <column datatype='integer' name='BowlingTeam_SK' ordinal='44' />
+                  <column datatype='integer' name='Keeper_Catch' ordinal='45' />
+                  <column datatype='integer' name='Player_out_sk' ordinal='46' />
+                  <column datatype='date' name='MatchDateSK' ordinal='47' />
+                </columns>
+              </relation>
+              <relation connection='textscan.1t3bl6019j0ool1atncpe1rkb3sc' name='Match.csv' table='[Match#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='Match_SK' ordinal='0' />
+                  <column datatype='integer' name='match_id' ordinal='1' />
+                  <column datatype='string' name='Team1' ordinal='2' />
+                  <column datatype='string' name='Team2' ordinal='3' />
+                  <column datatype='date' name='match_date' ordinal='4' />
+                  <column datatype='integer' name='Season_Year' ordinal='5' />
+                  <column datatype='string' name='Venue_Name' ordinal='6' />
+                  <column datatype='string' name='City_Name' ordinal='7' />
+                  <column datatype='string' name='Country_Name' ordinal='8' />
+                  <column datatype='string' name='Toss_Winner' ordinal='9' />
+                  <column datatype='string' name='match_winner' ordinal='10' />
+                  <column datatype='string' name='Toss_Name' ordinal='11' />
+                  <column datatype='string' name='Win_Type' ordinal='12' />
+                  <column datatype='string' name='Outcome_Type' ordinal='13' />
+                  <column datatype='string' name='ManOfMach' ordinal='14' />
+                  <column datatype='integer' name='Win_Margin' ordinal='15' />
+                  <column datatype='integer' name='Country_id' ordinal='16' />
+                </columns>
+              </relation>
+            </relation>
+            <relation connection='textscan.1t3bl6019j0ool1atncpe1rkb3sc' name='Player.csv' table='[Player#csv]' type='table'>
+              <columns character-set='windows-1252' header='yes' locale='en_AU' separator=','>
+                <column datatype='integer' name='PLAYER_SK' ordinal='0' />
+                <column datatype='integer' name='Player_Id' ordinal='1' />
+                <column datatype='string' name='Player_Name' ordinal='2' />
+                <column datatype='date' name='DOB' ordinal='3' />
+                <column datatype='string' name='Batting_hand' ordinal='4' />
+                <column datatype='string' name='Bowling_skill' ordinal='5' />
+                <column datatype='string' name='Country_Name' ordinal='6' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.1t3bl6019j0ool1atncpe1rkb3sc' name='Player_match.csv' table='[Player_match#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='Player_match_SK' ordinal='0' />
+              <column datatype='integer' name='PlayerMatch_key' ordinal='1' />
+              <column datatype='integer' name='Match_Id' ordinal='2' />
+              <column datatype='integer' name='Player_Id' ordinal='3' />
+              <column datatype='string' name='Player_Name' ordinal='4' />
+              <column datatype='date' name='DOB' ordinal='5' />
+              <column datatype='string' name='Batting_hand' ordinal='6' />
+              <column datatype='string' name='Bowling_skill' ordinal='7' />
+              <column datatype='string' name='Country_Name' ordinal='8' />
+              <column datatype='string' name='Role_Desc' ordinal='9' />
+              <column datatype='string' name='Player_team' ordinal='10' />
+              <column datatype='string' name='Opposit_Team' ordinal='11' />
+              <column datatype='integer' name='Season_year' ordinal='12' />
+              <column datatype='integer' name='is_manofThematch' ordinal='13' />
+              <column datatype='integer' name='Age_As_on_match' ordinal='14' />
+              <column datatype='integer' name='IsPlayers_Team_won' ordinal='15' />
+              <column datatype='string' name='Batting_Status' ordinal='16' />
+              <column datatype='string' name='Bowling_Status' ordinal='17' />
+              <column datatype='string' name='Player_Captain' ordinal='18' />
+              <column datatype='string' name='Opposit_captain' ordinal='19' />
+              <column datatype='string' name='Player_keeper' ordinal='20' />
+              <column datatype='string' name='Opposit_keeper' ordinal='21' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Age_As_on_match]' value='[Player_match.csv].[Age_As_on_match]' />
+          <map key='[BOWLER_SK]' value='[Ball_By_Ball.csv].[BOWLER_SK]' />
+          <map key='[Ball_id]' value='[Ball_By_Ball.csv].[Ball_id]' />
+          <map key='[BattingTeam_SK]' value='[Ball_By_Ball.csv].[BattingTeam_SK]' />
+          <map key='[Batting_Status]' value='[Player_match.csv].[Batting_Status]' />
+          <map key='[Batting_hand (Player_match.csv)]' value='[Player_match.csv].[Batting_hand]' />
+          <map key='[Batting_hand]' value='[Player.csv].[Batting_hand]' />
+          <map key='[Bowled]' value='[Ball_By_Ball.csv].[Bowled]' />
+          <map key='[Bowler]' value='[Ball_By_Ball.csv].[Bowler]' />
+          <map key='[Bowler_Extras]' value='[Ball_By_Ball.csv].[Bowler_Extras]' />
+          <map key='[Bowler_Wicket]' value='[Ball_By_Ball.csv].[Bowler_Wicket]' />
+          <map key='[Bowler_match_SK]' value='[Ball_By_Ball.csv].[Bowler_match_SK]' />
+          <map key='[BowlingTeam_SK]' value='[Ball_By_Ball.csv].[BowlingTeam_SK]' />
+          <map key='[Bowling_Status]' value='[Player_match.csv].[Bowling_Status]' />
+          <map key='[Bowling_skill (Player_match.csv)]' value='[Player_match.csv].[Bowling_skill]' />
+          <map key='[Bowling_skill]' value='[Player.csv].[Bowling_skill]' />
+          <map key='[Byes]' value='[Ball_By_Ball.csv].[Byes]' />
+          <map key='[Caught]' value='[Ball_By_Ball.csv].[Caught]' />
+          <map key='[City_Name]' value='[Match.csv].[City_Name]' />
+          <map key='[Country_Name (Player.csv)]' value='[Player.csv].[Country_Name]' />
+          <map key='[Country_Name (Player_match.csv)]' value='[Player_match.csv].[Country_Name]' />
+          <map key='[Country_Name]' value='[Match.csv].[Country_Name]' />
+          <map key='[Country_id]' value='[Match.csv].[Country_id]' />
+          <map key='[DOB (Player_match.csv)]' value='[Player_match.csv].[DOB]' />
+          <map key='[DOB]' value='[Player.csv].[DOB]' />
+          <map key='[Extra_Type]' value='[Ball_By_Ball.csv].[Extra_Type]' />
+          <map key='[Extra_runs]' value='[Ball_By_Ball.csv].[Extra_runs]' />
+          <map key='[Fielder_SK]' value='[Ball_By_Ball.csv].[Fielder_SK]' />
+          <map key='[Fielder_match_SK]' value='[Ball_By_Ball.csv].[Fielder_match_SK]' />
+          <map key='[Fielders]' value='[Ball_By_Ball.csv].[Fielders]' />
+          <map key='[Innings_No]' value='[Ball_By_Ball.csv].[Innings_No]' />
+          <map key='[IsPlayers_Team_won]' value='[Player_match.csv].[IsPlayers_Team_won]' />
+          <map key='[Keeper_Catch]' value='[Ball_By_Ball.csv].[Keeper_Catch]' />
+          <map key='[LBW]' value='[Ball_By_Ball.csv].[LBW]' />
+          <map key='[Legbyes]' value='[Ball_By_Ball.csv].[Legbyes]' />
+          <map key='[ManOfMach]' value='[Match.csv].[ManOfMach]' />
+          <map key='[MatcH_id]' value='[Ball_By_Ball.csv].[MatcH_id]' />
+          <map key='[MatchDateSK]' value='[Ball_By_Ball.csv].[MatchDateSK]' />
+          <map key='[Match_Date]' value='[Ball_By_Ball.csv].[Match_Date]' />
+          <map key='[Match_Id]' value='[Player_match.csv].[Match_Id]' />
+          <map key='[Match_SK]' value='[Match.csv].[Match_SK]' />
+          <map key='[NONStriker_SK]' value='[Ball_By_Ball.csv].[NONStriker_SK]' />
+          <map key='[Noballs]' value='[Ball_By_Ball.csv].[Noballs]' />
+          <map key='[NonStriker_match_SK]' value='[Ball_By_Ball.csv].[NonStriker_match_SK]' />
+          <map key='[Non_Striker]' value='[Ball_By_Ball.csv].[Non_Striker]' />
+          <map key='[ObstructingFeild]' value='[Ball_By_Ball.csv].[ObstructingFeild]' />
+          <map key='[Opposit_Team]' value='[Player_match.csv].[Opposit_Team]' />
+          <map key='[Opposit_captain]' value='[Player_match.csv].[Opposit_captain]' />
+          <map key='[Opposit_keeper]' value='[Player_match.csv].[Opposit_keeper]' />
+          <map key='[Out_type]' value='[Ball_By_Ball.csv].[Out_type]' />
+          <map key='[Outcome_Type]' value='[Match.csv].[Outcome_Type]' />
+          <map key='[Over_id]' value='[Ball_By_Ball.csv].[Over_id]' />
+          <map key='[PLAYER_SK]' value='[Player.csv].[PLAYER_SK]' />
+          <map key='[Penalty]' value='[Ball_By_Ball.csv].[Penalty]' />
+          <map key='[PlayerMatch_key]' value='[Player_match.csv].[PlayerMatch_key]' />
+          <map key='[PlayerOut_match_SK]' value='[Ball_By_Ball.csv].[PlayerOut_match_SK]' />
+          <map key='[Player_Captain]' value='[Player_match.csv].[Player_Captain]' />
+          <map key='[Player_Id (Player_match.csv)]' value='[Player_match.csv].[Player_Id]' />
+          <map key='[Player_Id]' value='[Player.csv].[Player_Id]' />
+          <map key='[Player_Name (Player_match.csv)]' value='[Player_match.csv].[Player_Name]' />
+          <map key='[Player_Name]' value='[Player.csv].[Player_Name]' />
+          <map key='[Player_Out]' value='[Ball_By_Ball.csv].[Player_Out]' />
+          <map key='[Player_keeper]' value='[Player_match.csv].[Player_keeper]' />
+          <map key='[Player_match_SK]' value='[Player_match.csv].[Player_match_SK]' />
+          <map key='[Player_out_sk]' value='[Ball_By_Ball.csv].[Player_out_sk]' />
+          <map key='[Player_team]' value='[Player_match.csv].[Player_team]' />
+          <map key='[Retired_hurt]' value='[Ball_By_Ball.csv].[Retired_hurt]' />
+          <map key='[Role_Desc]' value='[Player_match.csv].[Role_Desc]' />
+          <map key='[Run_out]' value='[Ball_By_Ball.csv].[Run_out]' />
+          <map key='[Runs_Scored]' value='[Ball_By_Ball.csv].[Runs_Scored]' />
+          <map key='[Season]' value='[Ball_By_Ball.csv].[Season]' />
+          <map key='[Season_Year]' value='[Match.csv].[Season_Year]' />
+          <map key='[Season_year]' value='[Player_match.csv].[Season_year]' />
+          <map key='[StrikerSK]' value='[Ball_By_Ball.csv].[StrikerSK]' />
+          <map key='[Striker]' value='[Ball_By_Ball.csv].[Striker]' />
+          <map key='[Striker_Batting_Position]' value='[Ball_By_Ball.csv].[Striker_Batting_Position]' />
+          <map key='[Striker_match_SK]' value='[Ball_By_Ball.csv].[Striker_match_SK]' />
+          <map key='[Stumped]' value='[Ball_By_Ball.csv].[Stumped]' />
+          <map key='[Team1]' value='[Match.csv].[Team1]' />
+          <map key='[Team2]' value='[Match.csv].[Team2]' />
+          <map key='[Team_Batting]' value='[Ball_By_Ball.csv].[Team_Batting]' />
+          <map key='[Team_Bowling]' value='[Ball_By_Ball.csv].[Team_Bowling]' />
+          <map key='[Toss_Name]' value='[Match.csv].[Toss_Name]' />
+          <map key='[Toss_Winner]' value='[Match.csv].[Toss_Winner]' />
+          <map key='[Venue_Name]' value='[Match.csv].[Venue_Name]' />
+          <map key='[Wides]' value='[Ball_By_Ball.csv].[Wides]' />
+          <map key='[Win_Margin]' value='[Match.csv].[Win_Margin]' />
+          <map key='[Win_Type]' value='[Match.csv].[Win_Type]' />
+          <map key='[caught_and_bowled]' value='[Ball_By_Ball.csv].[caught_and_bowled]' />
+          <map key='[hit_wicket]' value='[Ball_By_Ball.csv].[hit_wicket]' />
+          <map key='[is_manofThematch]' value='[Player_match.csv].[is_manofThematch]' />
+          <map key='[match_date]' value='[Match.csv].[match_date]' />
+          <map key='[match_id]' value='[Match.csv].[match_id]' />
+          <map key='[match_winner]' value='[Match.csv].[match_winner]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MatcH_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MatcH_id]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>MatcH_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Over_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Over_id]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Over_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ball_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ball_id]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Ball_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Innings_No</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Innings_No]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Innings_No</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Team_Batting</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Team_Batting]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Team_Batting</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Team_Bowling</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Team_Bowling]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Team_Bowling</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Striker_Batting_Position</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Striker_Batting_Position]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Striker_Batting_Position</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Extra_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Extra_Type]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Extra_Type</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Runs_Scored</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Runs_Scored]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Runs_Scored</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Extra_runs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Extra_runs]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Extra_runs</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wides</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Wides]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Wides</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Legbyes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Legbyes]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Legbyes</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Byes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Byes]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Byes</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Noballs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Noballs]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Noballs</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Penalty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Penalty]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Penalty</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowler_Extras</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bowler_Extras]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Bowler_Extras</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Out_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Out_type]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Out_type</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Caught</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Caught]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Caught</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowled</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bowled]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Bowled</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Run_out</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Run_out]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Run_out</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LBW</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LBW]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>LBW</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Retired_hurt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Retired_hurt]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Retired_hurt</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Stumped</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Stumped]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Stumped</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>caught_and_bowled</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[caught_and_bowled]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>caught_and_bowled</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hit_wicket</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hit_wicket]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>hit_wicket</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ObstructingFeild</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ObstructingFeild]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>ObstructingFeild</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowler_Wicket</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bowler_Wicket]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Bowler_Wicket</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Match_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Match_Date]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Match_Date</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Season</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Season]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Season</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Striker</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Striker]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Striker</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Striker</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Non_Striker]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Non_Striker</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowler</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bowler]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Bowler</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Out</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_Out]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Player_Out</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fielders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fielders]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Fielders</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Striker_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Striker_match_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Striker_match_SK</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StrikerSK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[StrikerSK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>StrikerSK</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NonStriker_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NonStriker_match_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>NonStriker_match_SK</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NONStriker_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NONStriker_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>NONStriker_SK</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fielder_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fielder_match_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Fielder_match_SK</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fielder_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fielder_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Fielder_SK</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowler_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bowler_match_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Bowler_match_SK</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BOWLER_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BOWLER_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>BOWLER_SK</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PlayerOut_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PlayerOut_match_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>PlayerOut_match_SK</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BattingTeam_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BattingTeam_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>BattingTeam_SK</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BowlingTeam_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BowlingTeam_SK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>BowlingTeam_SK</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Keeper_Catch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Keeper_Catch]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Keeper_Catch</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_out_sk</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_out_sk]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>Player_out_sk</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MatchDateSK</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[MatchDateSK]</local-name>
+            <parent-name>[Ball_By_Ball.csv]</parent-name>
+            <remote-alias>MatchDateSK</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Match_SK]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Match_SK</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[match_id]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>match_id</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Team1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Team1]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Team1</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Team2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Team2]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Team2</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[match_date]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>match_date</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Season_Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Season_Year]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Season_Year</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Venue_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Venue_Name]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Venue_Name</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City_Name]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>City_Name</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country_Name]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Country_Name</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Toss_Winner</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Toss_Winner]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Toss_Winner</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_winner</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[match_winner]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>match_winner</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Toss_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Toss_Name]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Toss_Name</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Win_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Win_Type]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Win_Type</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Outcome_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Outcome_Type]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Outcome_Type</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ManOfMach</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ManOfMach]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>ManOfMach</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Win_Margin</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Win_Margin]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Win_Margin</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Country_id]</local-name>
+            <parent-name>[Match.csv]</parent-name>
+            <remote-alias>Country_id</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;ibm-5348_P100-1997&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PLAYER_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PLAYER_SK]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>PLAYER_SK</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_Id]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>Player_Id</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player_Name]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>Player_Name</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOB</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DOB]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>DOB</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Batting_hand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Batting_hand]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>Batting_hand</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowling_skill</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Bowling_skill]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>Bowling_skill</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country_Name (Player.csv)]</local-name>
+            <parent-name>[Player.csv]</parent-name>
+            <remote-alias>Country_Name</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_match_SK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_match_SK]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_match_SK</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PlayerMatch_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PlayerMatch_key]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>PlayerMatch_key</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Match_Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Match_Id]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Match_Id</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_Id (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_Id</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player_Name (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_Name</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOB</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DOB (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>DOB</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Batting_hand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Batting_hand (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Batting_hand</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowling_skill</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Bowling_skill (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Bowling_skill</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country_Name (Player_match.csv)]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Country_Name</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Role_Desc</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Role_Desc]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Role_Desc</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_team</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player_team]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_team</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Opposit_Team</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Opposit_Team]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Opposit_Team</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Season_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Season_year]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Season_year</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_manofThematch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_manofThematch]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>is_manofThematch</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age_As_on_match</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age_As_on_match]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Age_As_on_match</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IsPlayers_Team_won</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IsPlayers_Team_won]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>IsPlayers_Team_won</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Batting_Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Batting_Status]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Batting_Status</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bowling_Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Bowling_Status]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Bowling_Status</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Captain</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player_Captain]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_Captain</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Opposit_captain</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Opposit_captain]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Opposit_captain</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_keeper</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player_keeper]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Player_keeper</remote-alias>
+            <ordinal>92</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Opposit_keeper</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Opposit_keeper]</local-name>
+            <parent-name>[Player_match.csv]</parent-name>
+            <remote-alias>Opposit_keeper</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Ball_id]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[City_Name]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Country_Name (Player.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country_Name (Player_match.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country_Name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Country_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[MatcH_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Match_Id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[Over_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[PlayerMatch_key]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Player_Id (Player_match.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Player_Id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Season_Year]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Season_year]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[match_id]' role='dimension' type='ordinal' />
+      <drill-paths>
+        <drill-path name='Country_Name, City_Name'>
+          <field>[Country_Name]</field>
+          <field>[City_Name]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.892857' measure-ordering='alphabetic' measure-percentage='0.107143' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A1E5F877-C7AA-41F2-A992-77ECA790E177}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E6D66204-02FD-43F5-AFC5-D3F05F4FAAED}' />
+    </window>
+  </windows>
+</workbook>
